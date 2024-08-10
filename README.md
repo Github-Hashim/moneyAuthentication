@@ -28,6 +28,7 @@ source venv/bin/activate
 ```
 git clone https://github.com/Github-Hashim/moneyAuthentication.git
 ```
+
 #### Change the directory
 ```
 cd bank-note-authentication
@@ -45,26 +46,25 @@ python app.py
 ```
 
 #### Access the Application
-
 Open your web browser and navigate to [http://127.0.0.1:5000/](http://127.0.0.1:5000/).
 
 ### Running with Docker
 
-#### Build the Docker Image
+#### Pull the Docker Image from Docker Hub
+To use the Docker image that was pushed to Docker Hub, pull it with the following command:
 ```
-docker build -t bank-note-authentication .
+docker pull moona160/bank-note-authentication:latest
 ```
 
 #### Run the Docker Container
 ```
-docker run -p 5000:5000 bank-note-authentication
+docker run -p 5000:5000 moona160/bank-note-authentication
 ```
 
 #### Access the Application
 Open your web browser and navigate to [http://127.0.0.1:5000/](http://127.0.0.1:5000/).
 
-Navigate to [http://127.0.0.1:5000/](http://127.0.0.1:5000/) in your web browser.
-
+### Usage
 #### Input Features
 Enter the values for variance, skewness, curtosis, and entropy.
 
@@ -76,13 +76,15 @@ The application uses a pre-trained Decision Tree Classifier model saved in `clas
 
 ### Troubleshooting
 #### Port Already Allocated
-If you encounter an error related to port allocation: 
+If you encounter an error related to port allocation:
+```
 Bind for 0.0.0.0:5000 failed: port is already allocated.
-
+```
 You can run the Docker container on a different port:
 ```
-docker run -p 5001:5000 bank-note-authenticationS
+docker run -p 5001:5000 your-dockerhub-username/bank-note-authentication
 ```
+
 #### Version Compatibility Issues
 For errors related to version compatibility, especially with numpy and scikit-learn, ensure that the versions in `requirements.txt` match those used during model training. Update `requirements.txt` as necessary and rebuild the Docker image.
 
@@ -93,3 +95,4 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 - [scikit-learn](https://scikit-learn.org/)
 - [Flask](https://flask.palletsprojects.com/)
 - [Docker](https://www.docker.com/)
+```
